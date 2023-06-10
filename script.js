@@ -2,15 +2,15 @@
 
 
 const keySounds = {
-  65: 'C:\Users\rahul\Downloads\thunder-25689.mp3', // A
-  83: 'sounds/sound2.mp3', // S
-  68: 'sounds/sound3.mp3', // D
-  70: 'sounds/sound4.mp3', // F
-  71: 'sounds/sound5.mp3', // G
-  72: 'sounds/sound6.mp3', // H
-  74: 'sounds/sound7.mp3', // J
-  75: 'sounds/sound8.mp3', // K
-  76: 'sounds/sound9.mp3'  // L
+  65: 'C:\Users\rahul\Downloads\thunder-25689.mp3', 
+  83: 'sounds/sound2.mp3', 
+  68: 'sounds/sound3.mp3', 
+  70: 'sounds/sound4.mp3', 
+  71: 'sounds/sound5.mp3', 
+  72: 'sounds/sound6.mp3', 
+  74: 'sounds/sound7.mp3', 
+  75: 'sounds/sound8.mp3', 
+  76: 'sounds/sound9.mp3'  
 };
 
 // Create an audio context
