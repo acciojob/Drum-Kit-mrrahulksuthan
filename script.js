@@ -3,7 +3,7 @@ document.addEventListener("keypress",function(event){
 });
 
 function makeSound(data-key){
-    switch (key) {
+    switch (data-key) {
         case "65":
             var audio1=new Audio("C:\Users\rahul\Downloads\thunder-25689.mp3");
             audio1.play();
