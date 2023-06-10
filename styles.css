@@ -1,1 +1,25 @@
 /*  your css code here. If applicable */
+
+.keys {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #000;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.key.active {
+  background-color: #ff0000;
+  color: #fff;
+}
