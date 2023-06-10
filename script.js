@@ -1,6 +1,6 @@
 //your JS code here. If required.
 const keySounds = {
-  65: 'C:\Users\rahul\Downloads\.mp3', 
+  65: 'C:\Users\rahul\Downloads\thunder-25689.mp3', 
   83: 'sounds/sound2.mp3', 
   68: 'sounds/sound3.mp3', 
   70: 'sounds/sound4.mp3', 
