@@ -1,68 +1,37 @@
-//your JS code here. If required.
-
-
-const keySounds = {
-  65: 'C:\Users\rahul\Downloads\thunder-25689.mp3', 
-  83: 'sounds/sound2.mp3', 
-  68: 'sounds/sound3.mp3', 
-  70: 'sounds/sound4.mp3', 
-  71: 'sounds/sound5.mp3', 
-  72: 'sounds/sound6.mp3', 
-  74: 'sounds/sound7.mp3', 
-  75: 'sounds/sound8.mp3', 
-  76: 'sounds/sound9.mp3'  
-};
-
-// Create an audio context
-const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-// Load sounds into audio buffers
-const audioBuffers = {};
-const loadSounds = async () => {
-  const keys = Object.keys(keySounds);
-  for (let i = 0; i < keys.length; i++) {
-    const keyCode = keys[i];
-    const soundPath = keySounds[keyCode];
-
-    const response = await fetch(soundPath);
-    const arrayBuffer = await response.arrayBuffer();
-    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-
-    audioBuffers[keyCode] = audioBuffer;
-  }
-};
-loadSounds();
-
-// Play sound from audio buffer
-const playSound = keyCode => {
-  const audioBuffer = audioBuffers[keyCode];
-
-  if (!audioBuffer) return;
-
-  const source = audioContext.createBufferSource();
-  source.buffer = audioBuffer;
-  source.connect(audioContext.destination);
-  source.start(0);
-};
-
-window.addEventListener('keydown', event => {
-  const keyCode = event.keyCode;
-  const key = document.querySelector(`.key[data-key="${keyCode}"]`);
-
-  if (!key) return; 
-
-  playSound(keyCode);
-
-  key.classList.add('active'); 
+document.addEventListener("keypress",function(event){
+    makeSound(event.key);
 });
 
-function removeTransition(event) {
-  if (event.propertyName !== 'transform') return;
-  this.classList.remove('active');
+function makeSound(data-key){
+    switch (key) {
+        case "65":
+            var audio1=new Audio("C:\Users\rahul\Downloads\thunder-25689.mp3");
+            audio1.play();
+            break;
+       case "a":
+            var audio2=new Audio("./sounds/kick-bass.mp3");
+            audio2.play();
+            break;
+       case "s":
+            var audio3=new Audio("./sounds/snare.mp3");
+            audio3.play();
+            break;
+       case "d":
+            var audio4=new Audio("./sounds/tom-1.mp3");
+            audio4.play();
+            break;
+        case "j":
+            var audio5=new Audio("./sounds/tom-2.mp3");
+            audio5.play();
+            break;
+        case "k":
+            var audio6=new Audio("./sounds/tom-3.mp3");
+            audio6.play();
+            break;
+        case "l":
+            var audio7=new Audio("./sounds/tom-4.mp3");
+            audio7.play();
+            break;    
+        default: console.log(key);
+       }
 }
-
-const keys = document.querySelectorAll('.key');
-keys.forEach(key => {
-  key.addEventListener('transitionend', removeTransition);
-});
-
